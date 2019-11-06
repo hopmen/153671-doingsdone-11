@@ -33,7 +33,19 @@ $tasks = [[
     "deadline" => null,
     "category" => "Домашние дела",
     "status" => false
-]]
+]];
+
+function get_count_task($tasks, $project)
+{
+    $result = 0;
+    foreach ($tasks as $task) {
+        if ($task["category"] === $project) {
+            $result++;
+        }
+    }
+    return $result;
+}
+
 ?>
 <!DOCTYPE html>
 <html lang="ru">
@@ -79,7 +91,7 @@ $tasks = [[
                         <? foreach ($projects as $project): ?>
                             <li class="main-navigation__list-item">
                                 <a class="main-navigation__list-item-link" href="#"><?= $project ?></a>
-                                <span class="main-navigation__list-item-count">0</span>
+                                <span class="main-navigation__list-item-count"><?= get_count_task($tasks, $project) ?></span>
                             </li>
                         <? endforeach; ?>
                     </ul>
@@ -128,23 +140,26 @@ $tasks = [[
                             continue;
                         }
                         ?>
-                            <tr class="tasks__item task <?if($task["status"]){print("task--completed");}?>">
-                                <td class="task__select">
-                                    <label class="checkbox task__checkbox">
-                                        <input
-                                            class="checkbox__input visually-hidden task__checkbox"
-                                            type="checkbox"
-                                            value="1">
-                                        <span class="checkbox__text"><?=$task["title"]?></span>
-                                    </label>
-                                </td>
+                        <tr
+                            class="tasks__item task <? if ($task["status"]) {
+                                print("task--completed");
+                            } ?>">
+                            <td class="task__select">
+                                <label class="checkbox task__checkbox">
+                                    <input
+                                        class="checkbox__input visually-hidden task__checkbox"
+                                        type="checkbox"
+                                        value="1">
+                                    <span class="checkbox__text"><?= $task["title"] ?></span>
+                                </label>
+                            </td>
 
-                                <td class="task__file">
-                                    <a class="download-link" href="#">Home.psd</a>
-                                </td>
+                            <td class="task__file">
+                                <a class="download-link" href="#">Home.psd</a>
+                            </td>
 
-                                <td class="task__date"></td>
-                            </tr>
+                            <td class="task__date"></td>
+                        </tr>
 
                     <? endforeach; ?>
                 </table>
