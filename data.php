@@ -3,7 +3,7 @@ $show_complete_tasks = rand(0, 1);
 $projects = ["Входящие", "Учеба", "Работа", "Домашние дела", "Авто"];
 $tasks = [[
     "title" => "Собеседование в IT компании",
-    "deadline" => "01.12.2019",
+    "deadline" => "07.11.2019 23:11",
     "category" => "Работа",
     "status" => false
 
@@ -24,13 +24,13 @@ $tasks = [[
     "status" => false
 ], [
     "title" => "Купить корм для кота",
-    "deadline" => null,
+    "deadline" => "25.12.2019",
     "category" => "Домашние дела",
     "status" => false
 ], [
     "title" => "Заказать пиццу",
     "deadline" => null,
     "category" => "Домашние дела",
-    "status" => false
+    "status" => "25.12.2019"
 ]];
 $page_title = 'Дела в порядке';

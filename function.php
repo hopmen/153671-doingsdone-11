@@ -34,3 +34,9 @@ function get_count_task($tasks, $project)
     }
     return $count;
 }
+
+function check_urgency_task($date_task){
+    $date_task = new DateTime($date_task);
+    $diff = $date_task->diff(new DateTime());
+    return $diff->format('%a') == 0 ? true : false;
+}

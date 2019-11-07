@@ -14,7 +14,6 @@
                 <? endforeach; ?>
             </ul>
         </nav>
-
         <a
             class="button button--transparent button--plus content__side-button"
             href="pages/form-project.html" target="project_add">Добавить проект</a>
@@ -61,6 +60,9 @@
                 <tr
                     class="tasks__item task <? if ($task["status"]) {
                         print("task--completed");
+                    }
+                    if (check_urgency_task($task["deadline"])) {
+                        print("task--important");
                     } ?>">
                     <td class="task__select">
                         <label class="checkbox task__checkbox">
