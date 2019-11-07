@@ -7,7 +7,7 @@ $content = include_template('main.php', ['projects' => $projects, 'tasks' => $ta
 
 $layout = include_template('layout.php', [
     'content' => $content,
-    'page_title' => $title_main
+    'page_title' => $page_title
 ]);
 
-echo $layout;
+print($layout);

@@ -6,7 +6,9 @@
             <ul class="main-navigation__list">
                 <? foreach ($projects as $project): ?>
                     <li class="main-navigation__list-item">
-                        <a class="main-navigation__list-item-link" href="#"><?= $project ?></a>
+
+
+                        <a class="main-navigation__list-item-link" href="#"><?= htmlspecialchars($project) ?></a>
                         <span class="main-navigation__list-item-count"><?= get_count_task($tasks, $project) ?></span>
                     </li>
                 <? endforeach; ?>
@@ -66,7 +68,7 @@
                                 class="checkbox__input visually-hidden task__checkbox"
                                 type="checkbox"
                                 value="1">
-                            <span class="checkbox__text"><?= $task["title"] ?></span>
+                            <span class="checkbox__text"><?= htmlspecialchars($task["title"]) ?></span>
                         </label>
                     </td>
 

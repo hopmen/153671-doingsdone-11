@@ -33,4 +33,4 @@ $tasks = [[
     "category" => "Домашние дела",
     "status" => false
 ]];
-$title_main = 'Дела в порядке';
+$page_title = 'Дела в порядке';
