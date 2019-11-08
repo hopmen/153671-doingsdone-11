@@ -40,3 +40,15 @@ function check_urgency_task($date_task){
     $diff = $date_task->diff(new DateTime());
     return $diff->format('%a') == 0 ? true : false;
 }
+
+function get_class_task($task)
+{
+    $task_class = [];
+    if ($task["status"]) {
+        $task_class[] = "task--completed";
+    }
+    if ($task["deadline"] && check_urgency_task($task["deadline"])) {
+        $task_class[] = "task--important";
+    }
+    return implode(' ', $task_class);
+}

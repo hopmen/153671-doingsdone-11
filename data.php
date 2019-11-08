@@ -3,7 +3,7 @@ $show_complete_tasks = rand(0, 1);
 $projects = ["Входящие", "Учеба", "Работа", "Домашние дела", "Авто"];
 $tasks = [[
     "title" => "Собеседование в IT компании",
-    "deadline" => "07.11.2019 23:11",
+    "deadline" => "08.11.2019 23:11",
     "category" => "Работа",
     "status" => false
 

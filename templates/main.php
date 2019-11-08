@@ -58,12 +58,7 @@
                 }
                 ?>
                 <tr
-                    class="tasks__item task <? if ($task["status"]) {
-                        print("task--completed");
-                    }
-                    if (check_urgency_task($task["deadline"])) {
-                        print("task--important");
-                    } ?>">
+                    class="tasks__item task <?=get_class_task($task)?>">
                     <td class="task__select">
                         <label class="checkbox task__checkbox">
                             <input
