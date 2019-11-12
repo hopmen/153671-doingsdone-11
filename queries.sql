@@ -23,7 +23,7 @@ INSERT INTO `tasks`(`status`, `name`, `project_id`, `user_id`) VALUES
     (0, 'Заказать пиццу', 2, 1),
     (0, 'Купить молока', 3, 2);
 
-/* получить список из всех проектов для одного пользователя */
+/* получить список из всех проектов для одного пользователя*/
 SELECT p.name from projects p
 INNER JOIN users u
 ON	 p.user_id = u.id
